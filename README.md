@@ -16,7 +16,10 @@ Home Audio Streaming Service
 - [ ] CI/CD Setup
 - [ ] Play music from local directory (server)
 - [ ] Database support (Postgres)
+- [ ] Metadata creation from imports
 - [ ] Authorisation/Authentication
+- [ ] Server-to-server share streaming
+- [ ] ActivityPub Community Features
 
 ## Contributors 
 
