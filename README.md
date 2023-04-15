@@ -10,7 +10,13 @@ Home Audio Streaming Service
 
 ## Roadmap
 
-*
+- [ ] Basic HTML/Javascript audio player
+- [ ] Web portal wireframe
+- [ ] Containerisation
+- [ ] CI/CD Setup
+- [ ] Play music from local directory (server)
+- [ ] Database support (Postgres)
+- [ ] Authorisation/Authentication
 
 ## Contributors 
 
