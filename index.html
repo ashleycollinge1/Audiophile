@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Audio Player</title>
+    </head>
+    <body>
+        <h2>Audio Player</h2>
+        <br />
+        <br />
+        <audio id="audio-player">
+            <source src="recording.m4a" type="audio/mpeg" />
+            <!-- <source src="audiofile.ogg" type="audio/ogg" /> -->
+            <!-- place fallback here as <audio> supporting browsers will ignore it -->
+            <p>Download<a href="audiofile.m4a">audiofile.mp3</a></p>
+          </audio>
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <br />
+        <br />
+        <div id="information"></div>
+    </body>
+    <script src="audio_player.js"></script>
+</html>
