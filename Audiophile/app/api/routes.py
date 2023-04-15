@@ -1,7 +1,7 @@
 from flask import jsonify, request, abort, make_response, current_app
 from sqlalchemy.exc import IntegrityError
 
-from models import User, db
+from app.api.models import User, db
 from . import api
 
 
