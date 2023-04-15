@@ -3,6 +3,7 @@ Home Audio Streaming Service
 
 ![Github Build Status](https://github.com/ashleycollinge1/Audiophile/actions/workflows/static.yml/badge.svg?branch=stable)
 
+![Documentation](Documentation/index.md)
 
 ## Features
 
