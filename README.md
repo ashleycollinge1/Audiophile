@@ -13,6 +13,7 @@ Home Audio Streaming Service
 
 - [ ] Basic HTML/Javascript audio player
 - [ ] Web portal wireframe
+- [ ] Logging configured
 - [ ] Containerisation
 - [ ] CI/CD Setup
 - [ ] Play music from local directory (server)
