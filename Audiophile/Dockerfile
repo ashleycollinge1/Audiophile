@@ -7,12 +7,13 @@ EXPOSE 5000
 # Sets the working directory for following COPY and CMD instructions
 # Notice we haven’t created a directory by this name - this instruction
 # creates a directory with this name if it doesn’t exist
-WORKDIR /app
+WORKDIR /Audiophile
 
-COPY * /app
+COPY . /Audiophile
 RUN python -m pip install --upgrade pip
 RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org --no-cache-dir -r requirements.txt
 
 # Run app.py when the container launches
-COPY app.py /app
-CMD python Audiophile/run.py
+EXPOSE 5000
+CMD python run.py
+
