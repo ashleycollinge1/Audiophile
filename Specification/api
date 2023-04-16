@@ -4,6 +4,31 @@ TODO
 album /api/album
 artist /api/artist
 
+GET /api/track/<track_id>
+Returns track information for a particular track, ID in url
+
+Return Message:
+{
+    "track_id": integer:<track_id>,
+    "track_name": string:<track_name>,
+    "track_duration": datetime:<track_duration>,
+    "track_uri": string:<track_uri>,
+    "track_album": [ string:<track_album>, ],
+    "track_artist": [ string:<track_artist>, ],
+    "track_genre": string:<track_genre>,
+    "track_length": datetime:<track_length>,
+    "global_listens": integer:<global_listens>,
+    "track_rating": integer:<track_rating>,
+    "track_art": string:<album_art_uri>,
+    "release_date": datetime:<track_release_date>,
+    "track_credits": {
+        "performed_by": string:<performed_by>,
+        "written_by": string:<written_by>,
+        "produced_by": string:<produced_by>,
+        "source": "Musical Freedom",
+    }
+}
+
 GET /api/<user_id>/playlist
 Returns a list of user's playlists, public and private.
 
@@ -38,21 +63,7 @@ Return message:
     "track_listing": [
         {
             "track_id": integer:<track_id>,
-            "track_name": string:<track_name>,
-            "track_duration": datetime:<track_duration>,
             "track_uri": string:<track_uri>,
-            "track_album": [ string:<track_album>, ],
-            "track_artist": [ string:<track_artist>, ],
-            "track_genre": string:<track_genre>,
-            "track_length": datetime:<track_length>,
-            "track_art": string:<album_art_uri>,
-            "release_date": datetime:<track_release_date>,
-            "track_credits": {
-                "performed_by": string:<performed_by>,
-                "written_by": string:<written_by>,
-                "produced_by": string:<produced_by>,
-                "source": "Musical Freedom",
-            }
         },
     ]
 }
