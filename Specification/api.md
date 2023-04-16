@@ -102,7 +102,7 @@ Returns a list of user's playlists, public and private.
         ]
     }
 
-### GET /api/<user_id>/playlist/<playlist_id
+### GET /api/<user_id>/playlist/<playlist_id>
 Returns a playlist object with the track listing.
 
 #### Return message:
