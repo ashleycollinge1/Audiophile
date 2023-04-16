@@ -81,3 +81,7 @@ def delete_user(id):
     log_request(current_app._get_current_object(), user)
     db.session.commit()
     return jsonify({}), 204
+
+@api.route('/version', methods=['GET'])
+def version():
+    return {"version": "0.0.1a"}
