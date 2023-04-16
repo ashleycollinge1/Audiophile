@@ -1,5 +1,48 @@
 API Specification
 
+TODO
+album
+artist
+playlist
+
+GET /api/<user_id>/playlist
+Returns a list of user's playlists, public and private.
+
+Return message:
+{
+    "username": string:<username>,
+    "user_id": integer:<user_id>,
+    "user_uri": string:<user_uri>
+    "playlists": [
+        {
+            "playlist_id": integer:<playlist_id>,
+            "playlist_uri": string:<playlist_uri>,
+            "name": string:<playlist_name>,
+            "creator": integer:<user_id_of_creator,
+            "private": Bool:<private_bool>
+        },
+    ]
+}
+
+GET /api/<user_id>/playlist/<playlist_id
+Returns a playlist object with the track listing.
+
+Return message:
+{
+    "playlist_id": integer:<playlist_id>,
+    "playlist_duration": datetime:<playlist_duration>,
+    "creator": integer:<user_id>,
+    "track_listing": [
+        {
+            "track_id": integer:<track_id>,
+            "track_name": string:<track_name>,
+            "track_duration": datetime:<track_duration>,
+            "track_uri": string:<track_uri>,
+        },
+    ]
+}
+
+
 GET /api
 Return Message:
 
