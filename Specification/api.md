@@ -24,11 +24,12 @@ therefore to add tracks, we need an **ALBUM**, an **ARTIST**, and a **TRACK**.
             "album_name": string:<album_name>,
         }
 
-3. Create a new TRACK for each track, and associate the TRACK to the ALBUM using the API:
+3. Create a new TRACK for each track, and associate the TRACK to the ALBUM by ID, using the API:
 
         CREATE /api/track
-
-        UPDATE /api/album
+        {
+            "album_id": integer:<album_id>
+        }
 
 ## Reference
 
