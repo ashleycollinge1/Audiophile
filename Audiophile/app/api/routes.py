@@ -1,4 +1,5 @@
 from flask import jsonify, request, abort, make_response, current_app
+import git
 from sqlalchemy.exc import IntegrityError
 
 from app.api.models import User, db
@@ -84,4 +85,11 @@ def delete_user(id):
 
 @api.route('/version', methods=['GET'])
 def version():
-    return {"version": "0.0.1a"}
+    # using gitpython, we get the sha and current branch, so
+    # it's easy to see what the current version and branch
+    # we're working with
+    repo = git.Repo(search_parent_directories=True)
+    sha = repo.head.object.hexsha
+    branch_name = repo.active_branch.name
+    return {"version": sha[:7],
+    "branch": branch_name}
