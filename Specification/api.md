@@ -57,7 +57,7 @@ Creates a new **TRACK** within the application.
 
 ### GET /api/track/<track_id>
 
-Returns track information for a particular track, ID in url
+Returns track information for a particular track, ID in url. 
 
 #### Return Message:
 
@@ -126,8 +126,10 @@ Returns a playlist object with the track listing.
 
 ### GET /api
 
+Returns version of the API, potentially add any generic data we need for the application here.
+
 #### Return Message
 
     {
-        "Version": <API_version_number
+        "api_version": string:<API_version_number>,
     }
