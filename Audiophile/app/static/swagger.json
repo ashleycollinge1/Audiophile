@@ -1,0 +1,15 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "audiophile",
+      "version": "1.0.0",
+      "title": "Audiophile",
+      "contact": {
+        "email": "me@ashleycollinge.co.uk"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "https://opensource.org/license/apache-2-0/"
+      }
+    }
+}
