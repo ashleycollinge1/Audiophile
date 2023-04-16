@@ -1,9 +1,8 @@
 API Specification
 
 TODO
-album
-artist
-playlist
+album /api/album
+artist /api/artist
 
 GET /api/<user_id>/playlist
 Returns a list of user's playlists, public and private.
@@ -31,6 +30,10 @@ Return message:
 {
     "playlist_id": integer:<playlist_id>,
     "playlist_duration": datetime:<playlist_duration>,
+    "private": bool:<private>,
+    "date_created": datetime:<date_created>,
+    "date_last_modified": datetime:<date_last_modified>,
+    "shared_with": [ integer:<user_id>, ],
     "creator": integer:<user_id>,
     "track_listing": [
         {
@@ -38,6 +41,18 @@ Return message:
             "track_name": string:<track_name>,
             "track_duration": datetime:<track_duration>,
             "track_uri": string:<track_uri>,
+            "track_album": [ string:<track_album>, ],
+            "track_artist": [ string:<track_artist>, ],
+            "track_genre": string:<track_genre>,
+            "track_length": datetime:<track_length>,
+            "track_art": string:<album_art_uri>,
+            "release_date": datetime:<track_release_date>,
+            "track_credits": {
+                "performed_by": string:<performed_by>,
+                "written_by": string:<written_by>,
+                "produced_by": string:<produced_by>,
+                "source": "Musical Freedom",
+            }
         },
     ]
 }
