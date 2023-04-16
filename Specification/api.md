@@ -8,6 +8,7 @@ try and work out what the tracks are. All tracks must be on an album (even a sin
 therefore to add tracks, we need an ALBUM, an ARTIST, and a TRACK
 
 1. Create a new ARTIST using the API:
+
     CREATE /api/artist
     {
         "artist_name": string:<artist_name>,
