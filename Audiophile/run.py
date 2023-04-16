@@ -17,4 +17,4 @@ if __name__ == '__main__':
         #    usr = User(name='user', description='')
         #    db.session.add(usr)
         #    db.session.commit()
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
