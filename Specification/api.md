@@ -30,9 +30,29 @@ therefore to add tracks, we need an **ALBUM**, an **ARTIST**, and a **TRACK**.
 
         UPDATE /api/album
 
-
-
 ## Reference
+
+### CREATE /api/track/
+
+Creates a new **TRACK** within the application.
+
+#### Request:
+
+    {
+        "track_name": integer:<track_name>,
+        "track_artist": integer:<artist_id>,
+        "track_album": integer:<album_id>,
+    }
+
+    File sent alongside request.
+
+#### Return Message:
+
+    {
+        "track_id": integer:<track_id>,
+        "track_uri": string:<track_uri>,
+        "status": "Success"
+    }
 
 ### GET /api/track/<track_id>
 
