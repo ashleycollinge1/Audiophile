@@ -1,2 +1,16 @@
 API Specification
 
+GET /api
+Return Message:
+
+{"Version": <API_version_number}
+
+------------------------------------
+
+POST /api/album
+
+Data:
+{"": ""}
+
+Return Message:
+{"Status": "Success"}
