@@ -1,4 +1,31 @@
-API Specification
+# API Specification
+
+## Workflows
+
+### Import music to application
+To import music into the application we will need to look at the metadata and filenames to
+try and work out what the tracks are. All tracks must be on an album (even a single, same name is used),
+therefore to add tracks, we need an ALBUM, an ARTIST, and a TRACK
+
+1. Create a new ARTIST using the API:
+    CREATE /api/artist
+    {
+        "artist_name": string:<artist_name>,
+    }
+
+2. Create a new ALBUM for that ARTIST using the API:
+    CREATE /api/album
+    {
+        "artist_id": string:<artist_id>,
+        "album_name": string:<album_name>,
+    }
+
+3. Create a new TRACK for each track, and associate the TRACK to the ALBUM using the API:
+    CREATE /api/track
+
+    UPDATE /api/album
+
+
 
 TODO
 album /api/album
