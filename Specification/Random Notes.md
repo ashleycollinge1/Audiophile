@@ -141,3 +141,24 @@ We ought to prioritise free and easily accessible APIs over account req/paid API
 Similar setup to OAuth workflow, we use the user's account to authorise the API requests
 
 https://www.last.fm/api/webauth
+
+
+
+## Database
+
+Flask-SQLAlchemy as our ORM, which we will use to run queries on the database
+
+Flask-Migrate to allow us to migrate between old and new ORM state, crewtes new tables or
+columns etc, sometimes we will need to manually edit this. but it's vital for the database
+side
+
+first step is getting a db up, with a basic table or two, starting with authentication and 
+authorisation would be a good start
+
+determines access to various API endpoints, we can start with just user table and go from
+there
+
+Users: username, email, pass_hash, roles_list(1-many)
+Roles: admin, power user, user, server, permissions_list(1-many)
+Permissions: name, description
+
