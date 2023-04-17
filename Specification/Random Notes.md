@@ -99,3 +99,45 @@ name duration tags album reference
 album_id=2342
 
 /api/album/<id>
+
+## How are we going to import audio into the system?
+https://discogs-data-dumps.s3.us-west-2.amazonaws.com/index.html?prefix=data/2023/
+Data dumps of new artists/albums etc - lot of data though to store ~100s gbs
+Requests are throttled by the server by source IP to 60 per minute for authenticated requests, and 25 per minute for unauthenticated requests, with some exceptions.
+
+https://www.discogs.com/developers
+
+Example request
+
+    curl https://api.discogs.com/releases/249504 --user-agent "Audiophile/0.0.1a"
+
+curl https://api.discogs.com/database/search?artist="Elton John" --user-agent "Audiophile/0.0.1a"
+
+Must set user agent otherwise will get a blank response, or silently blocked. User agent lets
+them see who is connecting and what they're doing.
+
+### Authentication for Discogs.com
+
+https://www.discogs.com/developers#page:authentication,header:authentication-discogs-auth-flow
+
+Setup OAuth flow, whereby user must click a link in Audiophile, which takes them to discogs to authorise the app in their account (they must create an account), then Audiophile utilises their
+account to do all of the API requests. Somewhat complicated to do right now...
+
+
+Headers are provided on responses (below) for request rates
+
+X-Discogs-Ratelimit: The total number of requests you can make in a one minute window.
+
+X-Discogs-Ratelimit-Used : The number of requests you’ve made in your existing rate limit window.
+
+X-Discogs-Ratelimit-Remaining: The number of remaining requests you are able to make in the existing rate limit window.
+
+Spotify, Deezer all used apis which require an account, so does change the dynamic slightly
+
+We ought to prioritise free and easily accessible APIs over account req/paid APIs
+
+## Last.FM API
+
+Similar setup to OAuth workflow, we use the user's account to authorise the API requests
+
+https://www.last.fm/api/webauth
