@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
   db:
-    image: arm64v8/mysql
+    image: mariadb
     ports:
       - "3306:3306"
     environment:
