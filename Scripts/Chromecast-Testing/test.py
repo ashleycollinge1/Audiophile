@@ -2,13 +2,16 @@ import time
 import pychromecast
 
 #cast = pychromecast.Chromecast()
-
+"""
+cast, browser = pychromecast.Chromecast(cast_info="Test")
+cast.wait()
+print(cast.device)
+print("Done")"""
 
 # List chromecasts on the network, but don't connect
 services, browser = pychromecast.discovery.discover_chromecasts()
-time.sleep(10)
 print(services)
-#print(browser)
+print(browser)
 # Shut down discovery
 #pychromecast.discovery.stop_discovery(browser)
 
