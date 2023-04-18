@@ -26,3 +26,9 @@ docker-compose up -d
     sudo apt install libmariadb3 libmariadb-dev
 
 TBC - diagram of application components and how data flows between them
+
+## Useful links for dev
+
+https://medium.com/@ilyas_24382/deploy-a-web-app-using-flask-and-docker-containers-96218e80e5fa
+
+https://github.com/il-gen/basic_Docker-Flask
