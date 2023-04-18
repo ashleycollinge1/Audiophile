@@ -22,4 +22,7 @@ docker-compose up -d
     ./env/Scripts/activate.ps1
     pip install -r requirements.txt
 
+
+    sudo apt install libmariadb3 libmariadb-dev
+
 TBC - diagram of application components and how data flows between them
