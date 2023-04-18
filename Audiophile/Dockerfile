@@ -10,6 +10,7 @@ EXPOSE 5000
 WORKDIR /Audiophile
 
 COPY . /Audiophile
+RUN apt-get install libmariadb3 libmariadb-dev
 RUN python -m pip install --upgrade pip
 RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org --no-cache-dir -r requirements.txt
 
