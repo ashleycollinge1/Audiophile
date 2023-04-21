@@ -13,6 +13,19 @@ class Track(db.Model):
     def __repr__(self):
         return '<Track {0} {1}>'.format(self.track_name, self.artist)
 
+    def serialize(self):
+        """
+        Custom method used within api to serialize database objects into
+        JSON.
+        """
+        return {
+            'id': self.id,
+            'track_name': self.track_name,
+            'artist': self.artist,
+            'storage_location': self.storage_location,
+            'audio_format': self.audio_format,
+        }
+
 
 class User(db.Model):
 

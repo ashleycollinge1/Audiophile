@@ -2,7 +2,7 @@ from flask import jsonify, request, abort, make_response, current_app
 import git
 from sqlalchemy.exc import IntegrityError
 
-from app.api.models import User, db
+from app.api.models import User, db, Track
 from . import api
 
 
@@ -26,6 +26,23 @@ def not_found(error):
 @api.errorhandler(400)
 def bad_request(error):
     return make_response(jsonify({'detail': 'Bad request'}), 400)
+
+@api.route('/track', methods=['POST'])
+def new_track():
+    context = request.json
+    new_track = Track(track_name=context['track_name'],
+                      artist=context['artist'],
+                      storage_location=context['storage_location'],
+                      audio_format=context['audio_format'])
+    db.session.add(new_track)
+    db.session.commit()
+    return jsonify(new_track.id)
+
+
+@api.route('/track', methods=['GET'])
+def list_tracks():
+    tracks = Track.query.all()
+    return jsonify(tracks=[i.serialize() for i in tracks])
 
 
 @api.route('/users', methods=['GET'])
