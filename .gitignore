@@ -2,6 +2,8 @@
 *.m4a
 *.sqlite3
 *.flac
+# local sqlite3 testing
+*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
