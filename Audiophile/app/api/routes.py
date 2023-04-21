@@ -1,4 +1,4 @@
-from flask import jsonify, request, abort, make_response, current_app
+from flask import jsonify, request, abort, make_response, current_app, send_file
 import git
 from sqlalchemy.exc import IntegrityError
 
@@ -37,6 +37,12 @@ def new_track():
     db.session.add(new_track)
     db.session.commit()
     return jsonify(new_track.id)
+
+@api.route('/track/<id>/download', methods=['GET'])
+def download_audio_file(id):
+    print(id)
+    track = Track.query.filter_by(id=id).one()
+    return send_file("C:\\Share\\Music\\"+track.storage_location, as_attachment=True)
 
 
 @api.route('/track', methods=['GET'])
