@@ -7,3 +7,5 @@
 - [ ] File Storage location, saving paths in DB was broken, had to hard code
 - [ ] Sort out ENV stuff, one for testing, one for production
 - [ ] Sort out ENV with Dockerfile and docker-compose.yml
+- [ ] Add celery, beat, flower, redis to docker for long running tasks (https://testdriven.io/courses/flask-celery/docker/)
+- [ ] Configure internationalisation in flask to support multiple langs 
