@@ -20,6 +20,10 @@ def users():
     users = User.query.all()
     return render_template('users.html', users=users)
 
+@frontend.route('/player', methods=['GET'])
+def player():
+    return render_template('player.html')
+
 
 @frontend.route('/users/<int:id>', methods=['GET'])
 def user_details(id):

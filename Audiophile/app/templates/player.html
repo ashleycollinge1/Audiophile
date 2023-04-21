@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block javascript %}
+<script type="text/javascript">
+{% include "https://cdn.jsdelivr.net/npm/amplitudejs@{{version-number}}/dist/amplitude.js" %}
+
+Amplitude.init({
+		songs: [
+			{
+				"name": "Wrecking Ball",
+				"artist": "Miley Cyrus",
+				"album": "Album Name",
+				"url": "/track/4/download",
+				"cover_art_url": "/cover/art/url.jpg"
+			}
+		]
+	});
+</script>
+{% endblock %}
+{% block content %}
+
+{% endblock %}
