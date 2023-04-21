@@ -1,10 +1,6 @@
 #!/usr/bin/env python
-
-# model import is required to set up database correctly
-
 from app import create_app
 from config import base
-
 
 app = create_app()
 
