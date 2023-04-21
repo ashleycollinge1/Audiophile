@@ -27,6 +27,14 @@ docker-compose up -d
 
 TBC - diagram of application components and how data flows between them
 
+## Flask migrate
+
+To apply new migrations to your db, use:
+
+    flask db upgrade
+
+Useful link: https://flask-migrate.readthedocs.io/en/latest/
+
 ## Useful links for dev
 
 https://medium.com/@ilyas_24382/deploy-a-web-app-using-flask-and-docker-containers-96218e80e5fa
