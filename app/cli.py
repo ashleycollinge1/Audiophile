@@ -3,32 +3,29 @@ import click, requests, os
 
 def register(app):
     @app.cli.group()
-    def translate():
-        """Translation and localization commands."""
+    def track():
+        """Track resources and commands through the API."""
         pass
 
-    @translate.command()
-    @click.argument('lang')
-    def init(lang):
-        """Initialize a new language."""
-        if os.system('pybabel extract -F babel.cfg -k _l -o messages.pot .'):
-            raise RuntimeError('extract command failed')
-        if os.system(
-                'pybabel init -i messages.pot -d app/translations -l ' + lang):
-            raise RuntimeError('init command failed')
-        os.remove('messages.pot')
+    @track.command()
+    def create_track():
+        """
+        This creates a new track
+        """
+        res = requests.post('http://127.0.0.1:4000/api/track', json={"track_name":"Wrecking Ball",
+                                                                "artist": "Miley Cyrus",
+                                                                "storage_location": "06-miley_cyrus-wrecking_ball.flac",
+                                                                "audio_format": "flac"})
+        if res.ok:
+            print(res.json())
+        return 0
 
-    @translate.command()
-    def update():
-        """Update all languages."""
-        if os.system('pybabel extract -F babel.cfg -k _l -o messages.pot .'):
-            raise RuntimeError('extract command failed')
-        if os.system('pybabel update -i messages.pot -d app/translations'):
-            raise RuntimeError('update command failed')
-        os.remove('messages.pot')
-
-    @translate.command()
-    def compile():
-        """Compile all languages."""
-        if os.system('pybabel compile -d app/translations'):
-            raise RuntimeError('compile command failed')
+    @track.command()
+    def get_tracks():
+        """
+        Get all tracks
+        """
+        res = requests.get('http://127.0.0.1:4000/api/track')
+        if res.ok:
+            print(res.json())
+        return 0
