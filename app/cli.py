@@ -25,7 +25,7 @@ def register(app):
         """
         Get all tracks
         """
-        res = requests.get('http://127.0.0.1:4000/api/track')
+        res = requests.get('http://127.0.0.1:5000/api/track')
         if res.ok:
             print(res.json())
         return 0

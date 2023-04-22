@@ -20,10 +20,8 @@ services:
       MYSQL_DATABASE: audiophile
       MYSQL_USER: audiophile
       MYSQL_PASSWORD: password
-    command: --init-file /data/application/setup.sql
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/:ro
-      - ./setup.sql:/data/application/setup.sql
+      - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
       - dbdata:/var/lib/mysql
     healthcheck:
         test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
