@@ -12,7 +12,7 @@ def register(app):
         """
         This creates a new track
         """
-        res = requests.post('http://127.0.0.1:4000/api/track', json={"track_name":"Wrecking Ball",
+        res = requests.post('http://127.0.0.1:5000/api/track', json={"track_name":"Wrecking Ball",
                                                                 "artist": "Miley Cyrus",
                                                                 "storage_location": "06-miley_cyrus-wrecking_ball.flac",
                                                                 "audio_format": "flac"})

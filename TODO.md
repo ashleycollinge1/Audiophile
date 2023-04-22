@@ -9,3 +9,4 @@
 - [ ] Sort out ENV with Dockerfile and docker-compose.yml
 - [ ] Add celery, beat, flower, redis to docker for long running tasks (https://testdriven.io/courses/flask-celery/docker/)
 - [ ] Configure internationalisation in flask to support multiple langs 
+- [ ] Need a SQL init script to run on first docker run, to create db, user
