@@ -1,7 +1,7 @@
 version: "2"
 services:
   app:
-    build: ./app
+    build: .
     links:
       - dbcont
     ports:
@@ -11,13 +11,23 @@ services:
             condition: service_healthy
   dbcont:
     image: mariadb
+    expose:
+     - "3306"
     ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: audiophile
+      MYSQL_USER: audiophile
+      MYSQL_PASSWORD: password
+    command: --init-file /data/application/setup.sql
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
+      - ./setup.sql:/data/application/setup.sql
+      - dbdata:/var/lib/mysql
     healthcheck:
         test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
         timeout: 20s
         retries: 10
+volumes:
+  dbdata:
