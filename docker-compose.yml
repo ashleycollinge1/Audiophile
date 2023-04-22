@@ -1,7 +1,7 @@
 version: "2"
 services:
   app:
-    build: ./Audiophile
+    build: ./app
     links:
       - dbcont
     ports:
