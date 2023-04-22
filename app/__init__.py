@@ -25,8 +25,6 @@ def create_app():
     migrate = Migrate(app, db)
 
     with app.app_context():
-        if not database_exists(Config.SQLALCHEMY_DATABASE_URI):
-            create_database(Config.SQLALCHEMY_DATABASE_URI)
         db.create_all()
         # creates user if one doesn't exist
         if User.query.all() is None:
