@@ -6,7 +6,7 @@ from app.api.routes import api
 from app.api.models import User
 from sqlalchemy_utils import database_exists, create_database
 from flask_migrate import Migrate
-
+from app import cli
 
 def create_app():
 
@@ -40,4 +40,6 @@ def create_app():
     # register blueprints
     app.register_blueprint(frontend)
     app.register_blueprint(api, url_prefix='/api')
+
+    cli.register(app)
     return app

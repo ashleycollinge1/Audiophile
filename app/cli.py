@@ -1,4 +1,4 @@
-import click, requests
+import click, requests, os
 
 
 def register(app):
